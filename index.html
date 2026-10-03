@@ -1,0 +1,4396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healthy90 — 90 Day Healthy Eating Guide</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --green:#00ff66;
+    --green-light:#39ff88;
+    --green-dark:#00b84a;
+    --green-soft:#0aff7040;
+
+    --black:#030504;
+    --black2:#070a08;
+    --black3:#0b100d;
+
+    --card:#0c120f;
+    --card2:#101812;
+
+    --text:#f1fff5;
+    --muted:#91a398;
+
+    --border:rgba(0,255,102,.16);
+    --border-strong:rgba(0,255,102,.42);
+
+    --shadow:
+        0 15px 45px rgba(0,0,0,.45);
+
+    --green-shadow:
+        0 0 25px rgba(0,255,102,.16);
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+
+    font-family:'DM Sans',sans-serif;
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 5%,
+            rgba(0,255,102,.10),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(0,255,102,.07),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0,255,102,.05),
+            transparent 30%
+        ),
+
+        var(--black);
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND EFFECT
+========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    opacity:.25;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,255,102,.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,255,102,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 80%
+        );
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(0,255,102,.06);
+
+    filter:blur(80px);
+
+    top:25%;
+    left:-180px;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:
+        floatingGlow 8s ease-in-out infinite;
+
+}
+
+@keyframes floatingGlow{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(120px,80px);
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    padding:16px 5%;
+
+    background:
+        rgba(3,5,4,.90);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.45);
+
+    overflow:hidden;
+
+}
+
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--green),
+            transparent
+        );
+
+    left:-300px;
+    bottom:0;
+
+    animation:
+        headerScan 5s linear infinite;
+
+}
+
+@keyframes headerScan{
+
+    from{
+        left:-300px;
+    }
+
+    to{
+        left:110%;
+    }
+
+}
+
+
+.header-content{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    position:relative;
+
+}
+
+
+.logo{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:21px;
+
+    font-weight:800;
+
+    letter-spacing:-.5px;
+
+    color:white;
+
+    text-shadow:
+        0 0 15px rgba(0,255,102,.25);
+
+}
+
+
+.logo span{
+
+    color:var(--green);
+
+    text-shadow:
+        0 0 12px var(--green);
+
+}
+
+
+.header-progress{
+
+    width:280px;
+
+}
+
+
+.header-progress-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:11px;
+
+    margin-bottom:7px;
+
+    font-weight:700;
+
+    color:#b9c9bf;
+
+}
+
+
+.progress-bar{
+
+    height:9px;
+
+    width:100%;
+
+    background:#111914;
+
+    border:
+        1px solid rgba(0,255,102,.12);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+.progress-fill{
+
+    height:100%;
+
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00b84a,
+            #00ff66,
+            #8affb4
+        );
+
+    border-radius:20px;
+
+    transition:
+        width .7s cubic-bezier(.2,.8,.2,1);
+
+    box-shadow:
+        0 0 15px rgba(0,255,102,.7);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    max-width:1250px;
+
+    margin:35px auto 25px;
+
+    padding:0 20px;
+
+}
+
+
+.hero-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    padding:60px 55px;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0,255,102,.20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 70% 100%,
+            rgba(0,255,102,.08),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #050806,
+            #0a120d
+        );
+
+    border:
+        1px solid var(--border-strong);
+
+    box-shadow:
+
+        0 25px 70px rgba(0,0,0,.6),
+
+        0 0 45px rgba(0,255,102,.08);
+
+}
+
+
+.hero-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(0,255,102,.15);
+
+    right:-130px;
+    top:-220px;
+
+    box-shadow:
+        0 0 50px rgba(0,255,102,.08);
+
+}
+
+
+.hero-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(0,255,102,.08);
+
+    filter:blur(35px);
+
+    right:130px;
+    bottom:-100px;
+
+    animation:
+        heroGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes heroGlow{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.25);
+        opacity:1;
+    }
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:760px;
+
+}
+
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--green);
+
+    background:
+        rgba(0,255,102,.08);
+
+    border:
+        1px solid rgba(0,255,102,.25);
+
+    padding:8px 13px;
+
+    border-radius:50px;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 0 18px rgba(0,255,102,.08);
+
+    animation:
+        badgePulse 3s ease-in-out infinite;
+
+}
+
+
+@keyframes badgePulse{
+
+    0%,100%{
+        box-shadow:
+            0 0 15px rgba(0,255,102,.08);
+    }
+
+    50%{
+        box-shadow:
+            0 0 25px rgba(0,255,102,.20);
+    }
+
+}
+
+
+.hero h1{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:
+        clamp(36px,5vw,62px);
+
+    line-height:1.02;
+
+    letter-spacing:-2.5px;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--green);
+
+    text-shadow:
+        0 0 25px rgba(0,255,102,.45);
+
+}
+
+
+.hero p{
+
+    font-size:16px;
+
+    line-height:1.75;
+
+    max-width:680px;
+
+    color:#aebdb4;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+
+    margin-bottom:35px;
+
+}
+
+
+.stat{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c120f,
+            #080c09
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .3s ease,
+        border .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.stat::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:
+        rgba(0,255,102,.06);
+
+    right:-35px;
+    top:-40px;
+
+    transition:.3s;
+
+}
+
+
+.stat:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,255,102,.38);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 25px rgba(0,255,102,.08);
+
+}
+
+
+.stat:hover::before{
+
+    transform:
+        scale(1.5);
+
+}
+
+
+.stat-icon{
+
+    font-size:25px;
+
+    margin-bottom:8px;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(0,255,102,.2)
+        );
+
+}
+
+
+.stat h3{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:27px;
+
+    color:var(--green);
+
+    text-shadow:
+        0 0 12px rgba(0,255,102,.20);
+
+}
+
+
+.stat p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    margin-top:4px;
+
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.section-title{
+
+    margin:42px 0 17px;
+
+}
+
+
+.section-title h2{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:25px;
+
+    letter-spacing:-.5px;
+
+}
+
+
+.section-title p{
+
+    color:var(--muted);
+
+    margin-top:6px;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   PHASES
+========================================================= */
+
+.phases{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+
+}
+
+
+.phase{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d1410,
+            #080c09
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .3s ease,
+        border .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.phase::after{
+
+    content:"";
+
+    position:absolute;
+
+    height:2px;
+
+    width:0;
+
+    left:0;
+
+    bottom:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--green),
+            transparent
+        );
+
+    transition:
+        width .4s ease;
+
+}
+
+
+.phase:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,255,102,.35);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.55),
+        0 0 25px rgba(0,255,102,.08);
+
+}
+
+
+.phase:hover::after{
+
+    width:100%;
+
+}
+
+
+.phase.active{
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.55),
+        0 0 28px rgba(0,255,102,.14);
+
+}
+
+
+.phase.active::after{
+
+    width:100%;
+
+}
+
+
+.phase-number{
+
+    color:var(--green);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1.2px;
+
+}
+
+
+.phase h3{
+
+    font-family:'Manrope',sans-serif;
+
+    margin:10px 0;
+
+    font-size:20px;
+
+}
+
+
+.phase p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.65;
+
+}
+
+
+/* =========================================================
+   DAYS
+========================================================= */
+
+.days-wrapper{
+
+    margin-top:20px;
+
+}
+
+
+.days{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(10,1fr);
+
+    gap:8px;
+
+}
+
+
+.day-button{
+
+    position:relative;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #090d0a;
+
+    color:#b8c8bd;
+
+    padding:12px 5px;
+
+    border-radius:11px;
+
+    cursor:pointer;
+
+    font-weight:800;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.day-button:hover{
+
+    transform:
+        translateY(-4px);
+
+    color:var(--green);
+
+    border-color:
+        rgba(0,255,102,.45);
+
+    background:
+        #0c160f;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.5),
+        0 0 15px rgba(0,255,102,.08);
+
+}
+
+
+.day-button:active{
+
+    transform:
+        scale(.91);
+
+}
+
+
+.day-button.active{
+
+    color:#031007;
+
+    border-color:
+        var(--green);
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d957,
+            #00ff66
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.4),
+        0 0 20px rgba(0,255,102,.35);
+
+}
+
+
+.day-button.completed::after{
+
+    content:"✓";
+
+    position:absolute;
+
+    right:-5px;
+
+    top:-6px;
+
+    width:17px;
+
+    height:17px;
+
+    border-radius:50%;
+
+    background:
+        var(--green);
+
+    color:#001b09;
+
+    font-size:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        2px solid #070b08;
+
+    box-shadow:
+        0 0 10px rgba(0,255,102,.6);
+
+}
+
+
+/* =========================================================
+   DAY CONTENT
+========================================================= */
+
+.day-content{
+
+    position:relative;
+
+    margin-top:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b110e,
+            #070a08
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:27px;
+
+    padding:30px;
+
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.55);
+
+    animation:
+        fadeIn .35s ease;
+
+}
+
+
+.day-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:8%;
+
+    width:84%;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,255,102,.7),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,255,102,.5);
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.day-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+.day-title h2{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:30px;
+
+}
+
+
+.day-title p{
+
+    color:var(--muted);
+
+    margin-top:6px;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   COMPLETE BUTTON
+========================================================= */
+
+.complete-button{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid var(--green);
+
+    color:#031007;
+
+    padding:14px 21px;
+
+    border-radius:13px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d957,
+            #00ff66
+        );
+
+    box-shadow:
+        0 0 20px rgba(0,255,102,.18);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.complete-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+    height:180%;
+
+    top:-40%;
+
+    left:-100px;
+
+    background:
+        rgba(255,255,255,.35);
+
+    transform:
+        rotate(20deg);
+
+    transition:
+        left .5s ease;
+
+}
+
+
+.complete-button:hover::before{
+
+    left:120%;
+
+}
+
+
+.complete-button:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 0 30px rgba(0,255,102,.35);
+
+}
+
+
+.complete-button:active{
+
+    transform:
+        scale(.94);
+
+}
+
+
+.complete-button.completed{
+
+    color:var(--green);
+
+    background:
+        #0a160e;
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 22px rgba(0,255,102,.18);
+
+}
+
+
+/* =========================================================
+   MEALS
+========================================================= */
+
+.meals{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+
+.meal{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:21px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0e1511,
+            #090d0a
+        );
+
+    transition:
+        transform .3s ease,
+        border .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.meal::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:
+        rgba(0,255,102,.045);
+
+    right:-60px;
+    top:-65px;
+
+    transition:
+        transform .4s ease;
+
+}
+
+
+.meal:hover{
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(0,255,102,.35);
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.5),
+        0 0 20px rgba(0,255,102,.06);
+
+}
+
+
+.meal:hover::before{
+
+    transform:
+        scale(1.6);
+
+}
+
+
+.meal-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+}
+
+
+.meal-icon{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+        rgba(0,255,102,.07);
+
+    border:
+        1px solid rgba(0,255,102,.16);
+
+    font-size:23px;
+
+    box-shadow:
+        0 0 18px rgba(0,255,102,.05);
+
+}
+
+
+.meal h3{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:16px;
+
+}
+
+
+.meal-time{
+
+    color:var(--green);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    margin-top:3px;
+
+}
+
+
+.meal ul{
+
+    margin-top:16px;
+
+    padding-left:18px;
+
+}
+
+
+.meal li{
+
+    color:#aebcb3;
+
+    font-size:13px;
+
+    line-height:1.55;
+
+    margin-bottom:7px;
+
+}
+
+
+.meal li::marker{
+
+    color:var(--green);
+
+}
+
+
+/* =========================================================
+   WATER
+========================================================= */
+
+.water-section{
+
+    margin-top:25px;
+
+    border-radius:22px;
+
+    padding:23px;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(0,255,102,.08),
+            transparent 25%
+        ),
+
+        #0a110d;
+
+    border:
+        1px solid rgba(0,255,102,.18);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+}
+
+
+.water-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.water-header h3{
+
+    font-family:'Manrope',sans-serif;
+
+}
+
+
+.water-counter{
+
+    color:var(--green);
+
+    font-weight:900;
+
+    text-shadow:
+        0 0 10px rgba(0,255,102,.3);
+
+}
+
+
+.water-glasses{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:18px;
+
+}
+
+
+.glass{
+
+    width:44px;
+
+    height:52px;
+
+    border:
+        1px solid rgba(0,255,102,.28);
+
+    border-radius:
+        8px 8px 13px 13px;
+
+    background:
+        #080d0a;
+
+    color:#687970;
+
+    cursor:pointer;
+
+    font-size:19px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.glass:hover{
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--green);
+
+}
+
+
+.glass:active{
+
+    transform:
+        scale(.88);
+
+}
+
+
+.glass.active{
+
+    color:#001b09;
+
+    background:
+        linear-gradient(
+            180deg,
+            #00ff66,
+            #00bd4d
+        );
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 18px rgba(0,255,102,.28);
+
+}
+
+
+/* =========================================================
+   HABITS
+========================================================= */
+
+.habits{
+
+    margin-top:28px;
+
+}
+
+
+.habits h3{
+
+    font-family:'Manrope',sans-serif;
+
+    margin-bottom:15px;
+
+}
+
+
+.habit-list{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+
+.habit{
+
+    border:
+        1px solid var(--border);
+
+    padding:15px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    background:
+        rgba(255,255,255,.01);
+
+    transition:
+        background .2s ease,
+        border .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.habit:hover{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(0,255,102,.35);
+
+    box-shadow:
+        0 0 15px rgba(0,255,102,.05);
+
+}
+
+
+.habit input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:
+        var(--green);
+
+}
+
+
+.habit.checked{
+
+    background:
+        rgba(0,255,102,.055);
+
+    border-color:
+        rgba(0,255,102,.4);
+
+    box-shadow:
+        0 0 15px rgba(0,255,102,.05);
+
+}
+
+
+.habit span{
+
+    font-size:13px;
+
+    color:#b5c3ba;
+
+}
+
+
+/* =========================================================
+   TIP
+========================================================= */
+
+.tip{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:17px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,255,102,.07),
+            rgba(0,255,102,.025)
+        );
+
+    border:
+        1px solid rgba(0,255,102,.20);
+
+    box-shadow:
+        0 0 20px rgba(0,255,102,.04);
+
+}
+
+
+.tip strong{
+
+    color:var(--green);
+
+    text-shadow:
+        0 0 10px rgba(0,255,102,.2);
+
+}
+
+
+.tip p{
+
+    color:#9daf9f;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-top:7px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    position:relative;
+
+    margin-top:60px;
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,255,102,.08),
+            transparent 35%
+        ),
+
+        #030504;
+
+    border-top:
+        1px solid rgba(0,255,102,.15);
+
+}
+
+
+footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    width:180px;
+
+    height:1px;
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 20px var(--green);
+
+}
+
+
+footer h3{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:21px;
+
+    color:white;
+
+}
+
+
+footer h3::first-letter{
+
+    color:var(--green);
+
+}
+
+
+footer p{
+
+    color:#728077;
+
+    max-width:720px;
+
+    margin:10px auto;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#030504;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:
+        #12351f;
+
+    border-radius:10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 10px var(--green);
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection{
+
+    background:
+        var(--green);
+
+    color:#001b09;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .phases{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .days{
+
+        grid-template-columns:
+            repeat(6,1fr);
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    header{
+
+        padding:
+            15px 20px;
+
+    }
+
+
+    .header-content{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:14px;
+
+    }
+
+
+    .header-progress{
+
+        width:100%;
+
+    }
+
+
+    .hero{
+
+        margin-top:20px;
+
+    }
+
+
+    .hero-card{
+
+        padding:
+            38px 25px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:36px;
+
+    }
+
+
+    .meals{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .habit-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .day-header{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .complete-button{
+
+        width:100%;
+
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    .container{
+
+        padding:14px;
+
+    }
+
+
+    .stats{
+
+        gap:9px;
+
+    }
+
+
+    .stat{
+
+        padding:16px;
+
+    }
+
+
+    .stat h3{
+
+        font-size:22px;
+
+    }
+
+
+    .days{
+
+        grid-template-columns:
+            repeat(5,1fr);
+
+    }
+
+
+    .day-content{
+
+        padding:18px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:31px;
+
+        letter-spacing:-1px;
+
+    }
+
+
+    .section-title h2{
+
+        font-size:22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:.01ms !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="header-content">
+
+        <div class="logo">
+            🥗 Healthy<span>90</span>
+        </div>
+
+        <div class="header-progress">
+
+            <div class="header-progress-top">
+
+                <span>
+                    90 DAY PROGRESS
+                </span>
+
+                <span id="headerProgressText">
+                    0%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="headerProgress">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-card">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🇺🇸 90 DAY HEALTHY EATING GUIDE
+            </div>
+
+            <h1>
+
+                Eat better.<br>
+
+                Feel
+                <span>better.</span>
+
+            </h1>
+
+            <p>
+
+                A simple 90-day guide designed around balanced,
+                everyday foods and healthy habits. Discover new
+                meals, stay hydrated and build consistency one day
+                at a time.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+
+    <!-- =================================================
+         STATS
+    ================================================== -->
+
+    <div class="stats">
+
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                📅
+            </div>
+
+            <h3 id="statDays">
+                0
+            </h3>
+
+            <p>
+                Days completed
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                💧
+            </div>
+
+            <h3 id="statWater">
+                0
+            </h3>
+
+            <p>
+                Glasses today
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                🔥
+            </div>
+
+            <h3 id="statStreak">
+                0
+            </h3>
+
+            <p>
+                Current streak
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                📈
+            </div>
+
+            <h3 id="statPercent">
+                0%
+            </h3>
+
+            <p>
+                Overall progress
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         PHASES
+    ================================================== -->
+
+    <div class="section-title">
+
+        <h2>
+            Your 90-day journey
+        </h2>
+
+        <p>
+            Each phase introduces new foods and healthy habits.
+        </p>
+
+    </div>
+
+
+    <div class="phases">
+
+
+        <div
+            class="phase active"
+            onclick="selectPhase(1)"
+        >
+
+            <div class="phase-number">
+                PHASE 01 · DAYS 1–30
+            </div>
+
+            <h3>
+                🌱 Build the basics
+            </h3>
+
+            <p>
+                Create a simple routine with balanced meals,
+                hydration and nutritious everyday foods.
+            </p>
+
+        </div>
+
+
+        <div
+            class="phase"
+            onclick="selectPhase(2)"
+        >
+
+            <div class="phase-number">
+                PHASE 02 · DAYS 31–60
+            </div>
+
+            <h3>
+                🥑 Add variety
+            </h3>
+
+            <p>
+                Explore different proteins, vegetables,
+                whole grains, fruits and healthy snacks.
+            </p>
+
+        </div>
+
+
+        <div
+            class="phase"
+            onclick="selectPhase(3)"
+        >
+
+            <div class="phase-number">
+                PHASE 03 · DAYS 61–90
+            </div>
+
+            <h3>
+                🌿 Make it a lifestyle
+            </h3>
+
+            <p>
+                Focus on consistency, balanced choices and
+                meals you can realistically enjoy long term.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         DAYS
+    ================================================== -->
+
+    <div class="section-title">
+
+        <h2>
+            Choose your day
+        </h2>
+
+        <p>
+            Select a day to see your personalized meal plan.
+        </p>
+
+    </div>
+
+
+    <div class="days-wrapper">
+
+        <div
+            class="days"
+            id="daysContainer">
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DAY CONTENT
+    ================================================== -->
+
+    <div
+        class="day-content"
+        id="dayContent">
+    </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <h3>
+        🥗 Healthy90
+    </h3>
+
+    <p>
+
+        This website is an educational healthy-eating guide
+        designed to help organize everyday food choices and
+        healthy habits.
+
+    </p>
+
+    <p>
+
+        Individual nutritional needs vary. This guide is not
+        medical advice or a personalized diet plan. If you have
+        a medical condition, food allergy, take medication, or
+        have specific nutritional needs, consult a qualified
+        healthcare professional.
+
+    </p>
+
+    <p>
+
+        © 2026 Healthy90 · 90 Day Healthy Eating Guide
+
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   BASIC SETTINGS
+========================================================= */
+
+let currentDay = 1;
+
+let currentPhase = 1;
+
+const TOTAL_DAYS = 90;
+
+
+/* =========================================================
+   90-DAY FOOD DATABASE
+========================================================= */
+
+const menus = [
+
+/* DAY 1 */
+
+{
+breakfast:[
+"Greek yogurt",
+"Blueberries",
+"Granola",
+"Chia seeds"
+],
+morning:[
+"Apple",
+"Small handful of almonds"
+],
+lunch:[
+"Grilled chicken breast",
+"Brown rice",
+"Steamed broccoli",
+"Avocado"
+],
+afternoon:[
+"Carrot sticks",
+"Hummus"
+],
+dinner:[
+"Baked salmon",
+"Roasted sweet potato",
+"Green beans"
+],
+evening:[
+"Plain Greek yogurt with berries"
+]
+},
+
+/* DAY 2 */
+
+{
+breakfast:[
+"2 scrambled eggs",
+"Whole-grain toast",
+"Avocado",
+"Orange slices"
+],
+morning:[
+"Banana",
+"Peanut butter"
+],
+lunch:[
+"Turkey whole-wheat wrap",
+"Lettuce",
+"Tomato",
+"Carrots"
+],
+afternoon:[
+"Greek yogurt",
+"Strawberries"
+],
+dinner:[
+"Grilled chicken",
+"Quinoa",
+"Roasted vegetables"
+],
+evening:[
+"Apple slices"
+]
+},
+
+/* DAY 3 */
+
+{
+breakfast:[
+"Oatmeal",
+"Banana",
+"Peanut butter",
+"Cinnamon"
+],
+morning:[
+"Blueberries",
+"Greek yogurt"
+],
+lunch:[
+"Chicken salad bowl",
+"Mixed greens",
+"Brown rice",
+"Avocado"
+],
+afternoon:[
+"Celery sticks",
+"Peanut butter"
+],
+dinner:[
+"Turkey meatballs",
+"Whole-grain pasta",
+"Tomato sauce",
+"Side salad"
+],
+evening:[
+"Small handful of walnuts"
+]
+},
+
+/* DAY 4 */
+
+{
+breakfast:[
+"Avocado toast",
+"Poached eggs",
+"Strawberries"
+],
+morning:[
+"Pear",
+"Almonds"
+],
+lunch:[
+"Grilled chicken sandwich",
+"Whole-grain bread",
+"Lettuce",
+"Tomato",
+"Side salad"
+],
+afternoon:[
+"Greek yogurt",
+"Blueberries"
+],
+dinner:[
+"Shrimp",
+"Brown rice",
+"Broccoli",
+"Bell peppers"
+],
+evening:[
+"Kiwi"
+]
+},
+
+/* DAY 5 */
+
+{
+breakfast:[
+"Overnight oats",
+"Raspberries",
+"Chia seeds",
+"Greek yogurt"
+],
+morning:[
+"Apple",
+"Peanut butter"
+],
+lunch:[
+"Turkey and avocado bowl",
+"Quinoa",
+"Spinach",
+"Tomatoes"
+],
+afternoon:[
+"Hummus",
+"Cucumber slices"
+],
+dinner:[
+"Grilled salmon",
+"Roasted potatoes",
+"Asparagus"
+],
+evening:[
+"Greek yogurt"
+]
+},
+
+/* DAY 6 */
+
+{
+breakfast:[
+"Vegetable omelet",
+"Whole-grain toast",
+"Blueberries"
+],
+morning:[
+"Banana",
+"Walnuts"
+],
+lunch:[
+"Chicken burrito bowl",
+"Black beans",
+"Brown rice",
+"Corn",
+"Avocado",
+"Salsa"
+],
+afternoon:[
+"Apple",
+"Greek yogurt"
+],
+dinner:[
+"Lean turkey burger",
+"Sweet potato wedges",
+"Mixed greens"
+],
+evening:[
+"Strawberries"
+]
+},
+
+/* DAY 7 */
+
+{
+breakfast:[
+"Whole-grain pancakes",
+"Fresh strawberries",
+"Greek yogurt"
+],
+morning:[
+"Orange",
+"Almonds"
+],
+lunch:[
+"Tuna salad",
+"Whole-grain crackers",
+"Mixed greens",
+"Tomato"
+],
+afternoon:[
+"Banana",
+"Peanut butter"
+],
+dinner:[
+"Roasted chicken",
+"Quinoa",
+"Brussels sprouts"
+],
+evening:[
+"Greek yogurt with blueberries"
+]
+},
+
+/* DAY 8 */
+
+{
+breakfast:[
+"Egg and spinach breakfast bowl",
+"Whole-grain toast",
+"Orange"
+],
+morning:[
+"Apple",
+"Almond butter"
+],
+lunch:[
+"Chicken Caesar-style salad",
+"Grilled chicken",
+"Romaine lettuce",
+"Parmesan",
+"Whole-grain croutons"
+],
+afternoon:[
+"Greek yogurt",
+"Raspberries"
+],
+dinner:[
+"Baked cod",
+"Brown rice",
+"Green beans",
+"Carrots"
+],
+evening:[
+"Pear"
+]
+},
+
+/* DAY 9 */
+
+{
+breakfast:[
+"Protein oatmeal",
+"Banana",
+"Blueberries",
+"Chia seeds"
+],
+morning:[
+"Greek yogurt",
+"Strawberries"
+],
+lunch:[
+"Turkey sandwich",
+"Whole-grain bread",
+"Avocado",
+"Lettuce",
+"Tomato"
+],
+afternoon:[
+"Carrots",
+"Hummus"
+],
+dinner:[
+"Chicken fajita bowl",
+"Brown rice",
+"Peppers",
+"Black beans",
+"Salsa"
+],
+evening:[
+"Kiwi"
+]
+},
+
+/* DAY 10 */
+
+{
+breakfast:[
+"Greek yogurt bowl",
+"Mixed berries",
+"Granola",
+"Pumpkin seeds"
+],
+morning:[
+"Banana",
+"Almonds"
+],
+lunch:[
+"Salmon salad",
+"Mixed greens",
+"Quinoa",
+"Cucumber",
+"Avocado"
+],
+afternoon:[
+"Apple",
+"Peanut butter"
+],
+dinner:[
+"Turkey chili",
+"Black beans",
+"Tomatoes",
+"Brown rice"
+],
+evening:[
+"Greek yogurt"
+]
+},
+
+/* DAY 11 */
+
+{
+breakfast:[
+"Eggs",
+"Whole-grain English muffin",
+"Avocado",
+"Blueberries"
+],
+morning:[
+"Pear",
+"Walnuts"
+],
+lunch:[
+"Chicken wrap",
+"Whole-wheat tortilla",
+"Spinach",
+"Tomato",
+"Avocado"
+],
+afternoon:[
+"Greek yogurt",
+"Banana"
+],
+dinner:[
+"Grilled shrimp",
+"Quinoa",
+"Roasted zucchini"
+],
+evening:[
+"Strawberries"
+]
+},
+
+/* DAY 12 */
+
+{
+breakfast:[
+"Oatmeal",
+"Apple",
+"Cinnamon",
+"Walnuts"
+],
+morning:[
+"Orange",
+"Greek yogurt"
+],
+lunch:[
+"Turkey quinoa bowl",
+"Spinach",
+"Tomatoes",
+"Black beans",
+"Avocado"
+],
+afternoon:[
+"Celery",
+"Peanut butter"
+],
+dinner:[
+"Grilled chicken",
+"Baked potato",
+"Broccoli",
+"Side salad"
+],
+evening:[
+"Blueberries"
+]
+},
+
+/* DAY 13 */
+
+{
+breakfast:[
+"Avocado toast",
+"Scrambled eggs",
+"Fresh berries"
+],
+morning:[
+"Banana",
+"Almonds"
+],
+lunch:[
+"Tuna wrap",
+"Whole-grain tortilla",
+"Lettuce",
+"Cucumber",
+"Tomato"
+],
+afternoon:[
+"Greek yogurt",
+"Raspberries"
+],
+dinner:[
+"Baked salmon",
+"Quinoa",
+"Roasted asparagus"
+],
+evening:[
+"Apple"
+]
+},
+
+/* DAY 14 */
+
+{
+breakfast:[
+"Greek yogurt",
+"Banana",
+"Granola",
+"Chia seeds"
+],
+morning:[
+"Apple",
+"Peanut butter"
+],
+lunch:[
+"Chicken burrito bowl",
+"Brown rice",
+"Black beans",
+"Corn",
+"Salsa",
+"Avocado"
+],
+afternoon:[
+"Carrots",
+"Hummus"
+],
+dinner:[
+"Turkey meatloaf",
+"Mashed sweet potato",
+"Green beans"
+],
+evening:[
+"Kiwi"
+]
+},
+
+/* DAY 15 */
+
+{
+breakfast:[
+"Vegetable omelet",
+"Whole-grain toast",
+"Strawberries"
+],
+morning:[
+"Orange",
+"Almonds"
+],
+lunch:[
+"Grilled chicken salad",
+"Mixed greens",
+"Quinoa",
+"Avocado",
+"Tomato"
+],
+afternoon:[
+"Greek yogurt",
+"Blueberries"
+],
+dinner:[
+"Shrimp tacos",
+"Whole-grain tortillas",
+"Cabbage",
+"Avocado",
+"Salsa"
+],
+evening:[
+"Pear"
+]
+},
+
+/* DAY 16 */
+
+{
+breakfast:[
+"Overnight oats",
+"Blueberries",
+"Banana",
+"Chia seeds"
+],
+morning:[
+"Greek yogurt",
+"Raspberries"
+],
+lunch:[
+"Turkey avocado sandwich",
+"Whole-grain bread",
+"Spinach",
+"Tomato"
+],
+afternoon:[
+"Apple",
+"Almond butter"
+],
+dinner:[
+"Grilled chicken",
+"Brown rice",
+"Broccoli",
+"Carrots"
+],
+evening:[
+"Strawberries"
+]
+},
+
+/* DAY 17 */
+
+{
+breakfast:[
+"Eggs",
+"Whole-grain toast",
+"Avocado",
+"Orange"
+],
+morning:[
+"Banana",
+"Walnuts"
+],
+lunch:[
+"Salmon grain bowl",
+"Quinoa",
+"Spinach",
+"Cucumber",
+"Avocado"
+],
+afternoon:[
+"Hummus",
+"Bell pepper slices"
+],
+dinner:[
+"Turkey burger",
+"Roasted sweet potato",
+"Mixed greens"
+],
+evening:[
+"Greek yogurt"
+]
+},
+
+/* DAY 18 */
+
+{
+breakfast:[
+"Oatmeal",
+"Strawberries",
+"Peanut butter",
+"Cinnamon"
+],
+morning:[
+"Pear",
+"Greek yogurt"
+],
+lunch:[
+"Chicken whole-wheat wrap",
+"Lettuce",
+"Tomato",
+"Avocado"
+],
+afternoon:[
+"Apple",
+"Almonds"
+],
+dinner:[
+"Baked cod",
+"Brown rice",
+"Roasted vegetables"
+],
+evening:[
+"Blueberries"
+]
+},
+
+/* DAY 19 */
+
+{
+breakfast:[
+"Greek yogurt bowl",
+"Blueberries",
+"Banana",
+"Pumpkin seeds"
+],
+morning:[
+"Orange",
+"Walnuts"
+],
+lunch:[
+"Turkey chili bowl",
+"Black beans",
+"Brown rice",
+"Avocado"
+],
+afternoon:[
+"Carrots",
+"Hummus"
+],
+dinner:[
+"Grilled salmon",
+"Sweet potato",
+"Asparagus"
+],
+evening:[
+"Kiwi"
+]
+},
+
+/* DAY 20 */
+
+{
+breakfast:[
+"Egg and avocado toast",
+"Blueberries"
+],
+morning:[
+"Apple",
+"Peanut butter"
+],
+lunch:[
+"Chicken salad",
+"Mixed greens",
+"Quinoa",
+"Tomato",
+"Cucumber"
+],
+afternoon:[
+"Greek yogurt",
+"Strawberries"
+],
+dinner:[
+"Turkey meatballs",
+"Whole-grain pasta",
+"Tomato sauce",
+"Broccoli"
+],
+evening:[
+"Pear"
+]
+},
+
+/* DAY 21 */
+
+{
+breakfast:[
+"Protein pancakes",
+"Blueberries",
+"Greek yogurt"
+],
+morning:[
+"Banana",
+"Almonds"
+],
+lunch:[
+"Chicken burrito bowl",
+"Brown rice",
+"Black beans",
+"Peppers",
+"Avocado"
+],
+afternoon:[
+"Apple",
+"Peanut butter"
+],
+dinner:[
+"Grilled shrimp",
+"Quinoa",
+"Broccoli",
+"Carrots"
+],
+evening:[
+"Greek yogurt"
+]
+},
+
+/* DAY 22 */
+
+{
+breakfast:[
+"Spinach omelet",
+"Whole-grain toast",
+"Orange"
+],
+morning:[
+"Greek yogurt",
+"Blueberries"
+],
+lunch:[
+"Turkey wrap",
+"Whole-wheat tortilla",
+"Avocado",
+"Spinach",
+"Tomato"
+],
+afternoon:[
+"Hummus",
+"Cucumber"
+],
+dinner:[
+"Roasted chicken",
+"Sweet potato",
+"Green beans"
+],
+evening:[
+"Strawberries"
+]
+},
+
+/* DAY 23 */
+
+{
+breakfast:[
+"Overnight oats",
+"Apple",
+"Cinnamon",
+"Chia seeds"
+],
+morning:[
+"Banana",
+"Walnuts"
+],
+lunch:[
+"Tuna grain bowl",
+"Brown rice",
+"Spinach",
+"Cucumber",
+"Tomato"
+],
+afternoon:[
+"Greek yogurt",
+"Raspberries"
+],
+dinner:[
+"Salmon",
+"Roasted potatoes",
+"Asparagus"
+],
+evening:[
+"Kiwi"
+]
+},
+
+/* DAY 24 */
+
+{
+breakfast:[
+"Avocado toast",
+"Eggs",
+"Fresh berries"
+],
+morning:[
+"Pear",
+"Almonds"
+],
+lunch:[
+"Chicken sandwich",
+"Whole-grain bread",
+"Lettuce",
+"Tomato",
+"Avocado"
+],
+afternoon:[
+"Apple",
+"Peanut butter"
+],
+dinner:[
+"Turkey chili",
+"Black beans",
+"Brown rice",
+"Mixed greens"
+],
+evening:[
+"Greek yogurt"
+]
+},
+
+/* DAY 25 */
+
+{
+breakfast:[
+"Greek yogurt",
+"Granola",
+"Raspberries",
+"Chia seeds"
+],
+morning:[
+"Orange",
+"Walnuts"
+],
+lunch:[
+"Chicken quinoa salad",
+"Spinach",
+"Avocado",
+"Cucumber",
+"Tomato"
+],
+afternoon:[
+"Carrots",
+"Hummus"
+],
+dinner:[
+"Shrimp tacos",
+"Cabbage",
+"Avocado",
+"Salsa"
+],
+evening:[
+"Blueberries"
+]
+},
+
+/* DAY 26 */
+
+{
+breakfast:[
+"Scrambled eggs",
+"Whole-grain toast",
+"Avocado",
+"Strawberries"
+],
+morning:[
+"Apple",
+"Almond butter"
+],
+lunch:[
+"Turkey avocado wrap",
+"Spinach",
+"Tomato",
+"Whole-wheat tortilla"
+],
+afternoon:[
+"Greek yogurt",
+"Banana"
+],
+dinner:[
+"Grilled chicken",
+"Brown rice",
+"Roasted Brussels sprouts"
+],
+evening:[
+"Pear"
+]
+},
+
+/* DAY 27 */
+
+{
+breakfast:[
+"Oatmeal",
+"Banana",
+"Blueberries",
+"Peanut butter"
+],
+morning:[
+"Greek yogurt",
+"Strawberries"
+],
+lunch:[
+"Salmon salad",
+"Mixed greens",
+"Quinoa",
+"Avocado"
+],
+afternoon:[
+"Celery",
+"Peanut butter"
+],
+dinner:[
+"Turkey burger",
+"Sweet potato wedges",
+"Side salad"
+],
+evening:[
+"Kiwi"
+]
+},
+
+/* DAY 28 */
+
+{
+breakfast:[
+"Egg breakfast bowl",
+"Spinach",
+"Avocado",
+"Whole-grain toast"
+],
+morning:[
+"Orange",
+"Almonds"
+],
+lunch:[
+"Chicken fajita bowl",
+"Brown rice",
+"Black beans",
+"Peppers",
+"Salsa"
+],
+afternoon:[
+"Apple",
+"Greek yogurt"
+],
+dinner:[
+"Baked cod",
+"Quinoa",
+"Green beans",
+"Carrots"
+],
+evening:[
+"Blueberries"
+]
+},
+
+/* DAY 29 */
+
+{
+breakfast:[
+"Greek yogurt bowl",
+"Banana",
+"Strawberries",
+"Granola"
+],
+morning:[
+"Pear",
+"Walnuts"
+],
+lunch:[
+"Turkey sandwich",
+"Whole-grain bread",
+"Avocado",
+"Spinach",
+"Tomato"
+],
+afternoon:[
+"Hummus",
+"Carrots"
+],
+dinner:[
+"Grilled salmon",
+"Sweet potato",
+"Broccoli"
+],
+evening:[
+"Greek yogurt"
+]
+},
+
+/* DAY 30 */
+
+{
+breakfast:[
+"Whole-grain pancakes",
+"Blueberries",
+"Greek yogurt"
+],
+morning:[
+"Apple",
+"Almonds"
+],
+lunch:[
+"Grilled chicken bowl",
+"Quinoa",
+"Avocado",
+"Spinach",
+"Tomato"
+],
+afternoon:[
+"Banana",
+"Peanut butter"
+],
+dinner:[
+"Turkey meatballs",
+"Whole-grain pasta",
+"Broccoli",
+"Tomato sauce"
+],
+evening:[
+"Strawberries"
+]
+}
+
+];
+
+
+/* =========================================================
+   EXTRA MENU VARIATIONS
+========================================================= */
+
+const extraBreakfasts = [
+
+"Veggie egg scramble with whole-grain toast",
+
+"Greek yogurt parfait with berries and chia seeds",
+
+"Peanut butter banana oatmeal",
+
+"Avocado toast with eggs",
+
+"Berry smoothie bowl with Greek yogurt",
+
+"Apple cinnamon overnight oats",
+
+"Whole-grain breakfast burrito with eggs and vegetables",
+
+"Greek yogurt with banana, walnuts and berries",
+
+"Spinach and egg breakfast sandwich",
+
+"Protein oatmeal with blueberries and almond butter"
+
+];
+
+
+const extraLunches = [
+
+"Grilled chicken quinoa bowl with avocado and greens",
+
+"Turkey and avocado whole-grain sandwich with vegetables",
+
+"Chicken and black bean burrito bowl",
+
+"Salmon salad with mixed greens and quinoa",
+
+"Turkey hummus wrap with spinach and tomatoes",
+
+"Grilled chicken salad with roasted vegetables",
+
+"Tuna and avocado whole-grain wrap",
+
+"Chicken fajita bowl with brown rice and vegetables",
+
+"Turkey and quinoa power bowl",
+
+"Grilled chicken sandwich with a side salad"
+
+];
+
+
+const extraDinners = [
+
+"Baked salmon with sweet potato and broccoli",
+
+"Grilled chicken with brown rice and roasted vegetables",
+
+"Turkey meatballs with whole-grain pasta and salad",
+
+"Shrimp with quinoa and roasted vegetables",
+
+"Turkey burger with sweet potato and greens",
+
+"Baked cod with potatoes and green beans",
+
+"Chicken fajitas with peppers, beans and avocado",
+
+"Grilled salmon with quinoa and asparagus",
+
+"Turkey chili with beans and brown rice",
+
+"Roasted chicken with vegetables and quinoa"
+
+];
+
+
+/* =========================================================
+   GET MENU
+========================================================= */
+
+function getMenu(day){
+
+    if(day <= 30){
+
+        return menus[day - 1];
+
+    }
+
+    const index =
+        (day - 31) % 10;
+
+    return {
+
+        breakfast:[
+            extraBreakfasts[index]
+        ],
+
+        morning:[
+
+            [
+                "Apple + almond butter",
+                "Greek yogurt + berries",
+                "Banana + small handful of walnuts",
+                "Orange + Greek yogurt",
+                "Pear + almonds"
+            ][day % 5]
+
+        ],
+
+        lunch:[
+            extraLunches[index]
+        ],
+
+        afternoon:[
+
+            [
+                "Carrots + hummus",
+                "Apple + peanut butter",
+                "Greek yogurt + strawberries",
+                "Cucumber + hummus",
+                "Banana + almond butter"
+            ][day % 5]
+
+        ],
+
+        dinner:[
+            extraDinners[index]
+        ],
+
+        evening:[
+
+            [
+                "Greek yogurt with berries",
+                "Fresh fruit",
+                "Kiwi",
+                "Strawberries",
+                "Apple slices"
+            ][day % 5]
+
+        ]
+
+    };
+
+}
+
+
+/* =========================================================
+   MEAL INFORMATION
+========================================================= */
+
+const mealInfo = [
+
+    {
+        icon:"🍳",
+        name:"Breakfast",
+        time:"7:00 – 9:00 AM"
+    },
+
+    {
+        icon:"🍎",
+        name:"Morning Snack",
+        time:"10:00 – 11:00 AM"
+    },
+
+    {
+        icon:"🥗",
+        name:"Lunch",
+        time:"12:00 – 2:00 PM"
+    },
+
+    {
+        icon:"🥜",
+        name:"Afternoon Snack",
+        time:"3:00 – 5:00 PM"
+    },
+
+    {
+        icon:"🍽️",
+        name:"Dinner",
+        time:"6:00 – 8:30 PM"
+    },
+
+    {
+        icon:"🥛",
+        name:"Evening Option",
+        time:"If hungry"
+    }
+
+];
+
+
+/* =========================================================
+   HABITS
+========================================================= */
+
+const habits = [
+
+"Drank water throughout the day",
+
+"Ate at least one fruit",
+
+"Included vegetables in my meals",
+
+"Included a protein source",
+
+"Chose mostly minimally processed foods",
+
+"Got enough sleep and moved my body"
+
+];
+
+
+/* =========================================================
+   PHASE TIPS
+========================================================= */
+
+const phaseTips = {
+
+1:{
+title:"🌱 Phase 1 — Build the basics",
+
+text:
+"Focus on consistency rather than perfection. Build simple meals around protein, vegetables or fruit, whole grains and healthy fats. You do not need to completely change your diet overnight."
+
+},
+
+2:{
+title:"🥑 Phase 2 — Add variety",
+
+text:
+"Try different proteins, vegetables, fruits and whole grains. Variety can make healthy eating more enjoyable and easier to maintain."
+
+},
+
+3:{
+title:"🌿 Phase 3 — Make it sustainable",
+
+text:
+"Think about which meals and habits you actually enjoy. The goal is to create eating patterns that can fit into everyday life rather than following a short-term restrictive plan."
+
+}
+
+};
+
+
+/* =========================================================
+   LOCAL STORAGE
+========================================================= */
+
+function getCompletedDays(){
+
+    return JSON.parse(
+        localStorage.getItem(
+            "healthy90_completed"
+        ) || "[]"
+    );
+
+}
+
+
+function saveCompletedDays(days){
+
+    localStorage.setItem(
+        "healthy90_completed",
+        JSON.stringify(days)
+    );
+
+}
+
+
+function getWater(day){
+
+    return Number(
+        localStorage.getItem(
+            "healthy90_water_" + day
+        ) || 0
+    );
+
+}
+
+
+function saveWater(day,value){
+
+    localStorage.setItem(
+        "healthy90_water_" + day,
+        value
+    );
+
+}
+
+
+function getHabits(day){
+
+    return JSON.parse(
+        localStorage.getItem(
+            "healthy90_habits_" + day
+        ) || "[]"
+    );
+
+}
+
+
+function saveHabits(day,values){
+
+    localStorage.setItem(
+        "healthy90_habits_" + day,
+        JSON.stringify(values)
+    );
+
+}
+
+
+/* =========================================================
+   GENERATE DAYS
+========================================================= */
+
+function generateDays(){
+
+    const container =
+        document.getElementById(
+            "daysContainer"
+        );
+
+    container.innerHTML="";
+
+    const start =
+        (currentPhase - 1) * 30 + 1;
+
+    const end =
+        currentPhase * 30;
+
+    const completed =
+        getCompletedDays();
+
+    for(
+        let day=start;
+        day<=end;
+        day++
+    ){
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "day-button";
+
+        if(day===currentDay){
+
+            button.classList.add(
+                "active"
+            );
+
+        }
+
+        if(
+            completed.includes(day)
+        ){
+
+            button.classList.add(
+                "completed"
+            );
+
+        }
+
+        button.textContent =
+            day;
+
+        button.onclick=function(){
+
+            currentDay=day;
+
+            renderDay();
+
+            generateDays();
+
+            const target =
+                document.querySelector(
+                    ".day-content"
+                );
+
+            if(target){
+
+                window.scrollTo({
+
+                    top:
+                        target.offsetTop - 100,
+
+                    behavior:"smooth"
+
+                });
+
+            }
+
+        };
+
+        container.appendChild(
+            button
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SELECT PHASE
+========================================================= */
+
+function selectPhase(phase){
+
+    currentPhase=phase;
+
+    currentDay=
+        (phase - 1) * 30 + 1;
+
+    document
+        .querySelectorAll(".phase")
+        .forEach(
+            (item,index)=>{
+
+                item.classList.toggle(
+                    "active",
+                    index + 1 === phase
+                );
+
+            }
+        );
+
+    generateDays();
+
+    renderDay();
+
+}
+
+
+/* =========================================================
+   RENDER DAY
+========================================================= */
+
+function renderDay(){
+
+    const content =
+        document.getElementById(
+            "dayContent"
+        );
+
+    const completed =
+        getCompletedDays();
+
+    const isCompleted =
+        completed.includes(
+            currentDay
+        );
+
+    const water =
+        getWater(currentDay);
+
+    const savedHabits =
+        getHabits(currentDay);
+
+    const phase =
+        currentDay <= 30
+        ? 1
+        : currentDay <= 60
+        ? 2
+        : 3;
+
+    currentPhase=phase;
+
+    document
+        .querySelectorAll(".phase")
+        .forEach(
+            (item,index)=>{
+
+                item.classList.toggle(
+                    "active",
+                    index + 1 === phase
+                );
+
+            }
+        );
+
+    const menu =
+        getMenu(currentDay);
+
+    const mealArrays = [
+
+        menu.breakfast,
+
+        menu.morning,
+
+        menu.lunch,
+
+        menu.afternoon,
+
+        menu.dinner,
+
+        menu.evening
+
+    ];
+
+    content.innerHTML=`
+
+        <div class="day-header">
+
+            <div class="day-title">
+
+                <h2>
+                    Day ${currentDay}
+                </h2>
+
+                <p>
+                    ${getDayDescription(currentDay)}
+                </p>
+
+            </div>
+
+            <button
+                class="complete-button ${isCompleted ? "completed" : ""}"
+                onclick="toggleComplete()"
+            >
+
+                ${
+                    isCompleted
+                    ? "✓ Day completed"
+                    : "Complete day"
+                }
+
+            </button>
+
+        </div>
+
+
+        <div class="meals">
+
+            ${mealArrays.map(
+                (foods,index)=>`
+
+                <div class="meal">
+
+                    <div class="meal-top">
+
+                        <div class="meal-icon">
+
+                            ${mealInfo[index].icon}
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                ${mealInfo[index].name}
+                            </h3>
+
+                            <div class="meal-time">
+
+                                ${mealInfo[index].time}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <ul>
+
+                        ${foods.map(
+                            food =>
+                            `<li>${food}</li>`
+                        ).join("")}
+
+                    </ul>
+
+                </div>
+
+            `).join("")}
+
+        </div>
+
+
+        <div class="water-section">
+
+            <div class="water-header">
+
+                <h3>
+                    💧 Daily hydration
+                </h3>
+
+                <div class="water-counter">
+
+                    ${water}/8 glasses
+
+                </div>
+
+            </div>
+
+
+            <div class="water-glasses">
+
+                ${Array.from(
+                    {length:8},
+                    (_,i)=>`
+
+                    <button
+                        class="glass ${i < water ? "active" : ""}"
+                        onclick="setWater(${i+1})"
+                    >
+
+                        💧
+
+                    </button>
+
+                `).join("")}
+
+            </div>
+
+        </div>
+
+
+        <div class="habits">
+
+            <h3>
+                ✅ Daily habits
+            </h3>
+
+            <div class="habit-list">
+
+                ${habits.map(
+                    (habit,index)=>`
+
+                    <label
+                        class="habit ${
+                            savedHabits.includes(index)
+                            ? "checked"
+                            : ""
+                        }"
+                    >
+
+                        <input
+                            type="checkbox"
+                            ${
+                                savedHabits.includes(index)
+                                ? "checked"
+                                : ""
+                            }
+
+                            onchange="
+                                toggleHabit(
+                                    ${index},
+                                    this.checked
+                                )
+                            "
+                        >
+
+                        <span>
+                            ${habit}
+                        </span>
+
+                    </label>
+
+                `).join("")}
+
+            </div>
+
+        </div>
+
+
+        <div class="tip">
+
+            <strong>
+                ${phaseTips[phase].title}
+            </strong>
+
+            <p>
+                ${phaseTips[phase].text}
+            </p>
+
+        </div>
+
+    `;
+
+    updateStats();
+
+}
+
+
+/* =========================================================
+   DAY DESCRIPTION
+========================================================= */
+
+function getDayDescription(day){
+
+    if(day <= 30){
+
+        return "Phase 1 · Building simple and consistent healthy habits.";
+
+    }
+
+    if(day <= 60){
+
+        return "Phase 2 · Exploring more variety while keeping your routine.";
+
+    }
+
+    return "Phase 3 · Turning healthy choices into sustainable habits.";
+
+}
+
+
+/* =========================================================
+   COMPLETE DAY
+========================================================= */
+
+function toggleComplete(){
+
+    let completed =
+        getCompletedDays();
+
+    if(
+        completed.includes(
+            currentDay
+        )
+    ){
+
+        completed =
+            completed.filter(
+                day =>
+                day !== currentDay
+            );
+
+    }else{
+
+        completed.push(
+            currentDay
+        );
+
+    }
+
+    completed.sort(
+        (a,b)=>a-b
+    );
+
+    saveCompletedDays(
+        completed
+    );
+
+    renderDay();
+
+    generateDays();
+
+}
+
+
+/* =========================================================
+   WATER
+========================================================= */
+
+function setWater(value){
+
+    saveWater(
+        currentDay,
+        value
+    );
+
+    renderDay();
+
+}
+
+
+/* =========================================================
+   HABITS
+========================================================= */
+
+function toggleHabit(
+    index,
+    checked
+){
+
+    let saved =
+        getHabits(
+            currentDay
+        );
+
+    if(checked){
+
+        if(
+            !saved.includes(index)
+        ){
+
+            saved.push(index);
+
+        }
+
+    }else{
+
+        saved =
+            saved.filter(
+                item =>
+                item !== index
+            );
+
+    }
+
+    saveHabits(
+        currentDay,
+        saved
+    );
+
+    renderDay();
+
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+function updateStats(){
+
+    const completed =
+        getCompletedDays();
+
+    const count =
+        completed.length;
+
+    const percentage =
+        Math.round(
+            (count / TOTAL_DAYS) * 100
+        );
+
+    document.getElementById(
+        "statDays"
+    ).textContent =
+        count;
+
+    document.getElementById(
+        "statWater"
+    ).textContent =
+        getWater(currentDay);
+
+    document.getElementById(
+        "statPercent"
+    ).textContent =
+        percentage + "%";
+
+    document.getElementById(
+        "headerProgress"
+    ).style.width =
+        percentage + "%";
+
+    document.getElementById(
+        "headerProgressText"
+    ).textContent =
+        percentage + "%";
+
+    calculateStreak();
+
+}
+
+
+/* =========================================================
+   STREAK
+========================================================= */
+
+function calculateStreak(){
+
+    const completed =
+        getCompletedDays();
+
+    let streak=0;
+
+    for(
+        let i=1;
+        i<=TOTAL_DAYS;
+        i++
+    ){
+
+        if(
+            completed.includes(i)
+        ){
+
+            streak++;
+
+        }else{
+
+            break;
+
+        }
+
+    }
+
+    document.getElementById(
+        "statStreak"
+    ).textContent =
+        streak;
+
+}
+
+
+/* =========================================================
+   START APPLICATION
+========================================================= */
+
+generateDays();
+
+renderDay();
+
+updateStats();
+
+</script>
+
+</body>
+</html>
